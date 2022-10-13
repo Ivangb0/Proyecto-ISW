@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClassLibrary.Persistence
+namespace Magazine.Entities
 {
-    internal class Class4
+    public partial class Paper
     {
     }
 }

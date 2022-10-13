@@ -7,8 +7,8 @@
     <ProjectGuid>{084BEF33-3F87-480A-BF39-F67DB739D2DB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ClassLibrary</RootNamespace>
-    <AssemblyName>ClassLibrary</AssemblyName>
+    <RootNamespace>Magazine</RootNamespace>
+    <AssemblyName>MagazineLib</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -42,11 +42,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessLogic\Entities\Class1.cs" />
-    <Compile Include="Persistence\Entities\Class4.cs" />
+    <Compile Include="Persistence\Entities\Area.cs" />
+    <Compile Include="Persistence\Entities\Evaluation.cs" />
+    <Compile Include="Persistence\Entities\Issue.cs" />
+    <Compile Include="Persistence\Entities\Magazine.cs" />
+    <Compile Include="Persistence\Entities\Paper.cs" />
+    <Compile Include="Persistence\Entities\Person.cs" />
+    <Compile Include="Persistence\Entities\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Persistence\Entities\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

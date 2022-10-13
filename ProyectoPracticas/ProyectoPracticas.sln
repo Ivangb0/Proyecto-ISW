@@ -5,7 +5,7 @@ VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{961B33D4-1E81-4755-90F8-B1457FDB5788}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary", "ClassLibrary\ClassLibrary.csproj", "{084BEF33-3F87-480A-BF39-F67DB739D2DB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagazineLib", "ClassLibrary\MagazineLib.csproj", "{084BEF33-3F87-480A-BF39-F67DB739D2DB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{0A4BB59D-99DD-4315-85A5-9E0AC9DE00DF}"
 	ProjectSection(SolutionItems) = preProject
