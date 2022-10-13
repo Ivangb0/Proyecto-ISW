@@ -41,8 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BusinessLogic\Class1.cs" />
-    <Compile Include="Persistence\Class4.cs" />
+    <Compile Include="BusinessLogic\Entities\Class1.cs" />
+    <Compile Include="Persistence\Entities\Class4.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
