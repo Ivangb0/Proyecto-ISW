@@ -10,8 +10,8 @@ namespace Magazine.Entities
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public ICollection<Issue> Issues { get; set; }
-        public ICollection<Area> Areas { get; set; }
-        public User ChiefEditor { get; set; }
+        public virtual ICollection<Issue> Issues { get; set; }
+        public virtual ICollection<Area> Areas { get; set; }
+        public virtual User ChiefEditor { get; set; }
     }
 }

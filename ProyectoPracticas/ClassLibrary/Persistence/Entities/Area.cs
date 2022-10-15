@@ -13,9 +13,9 @@ namespace Magazine.Entities
 
         public String Name { get; set; }
 
-        public ICollection<Paper> Papers { get; set; }
-        public ICollection<Paper> EvaluationPending { get; set; }
-        public ICollection<Paper> PublicationPending { get; set; }
-        public User Editor { get; set; }
+        public virtual ICollection<Paper> Papers { get; set; }
+        public virtual ICollection<Paper> EvaluationPending { get; set; }
+        public virtual ICollection<Paper> PublicationPending { get; set; }
+        public virtual User Editor { get; set; }
     }
 }

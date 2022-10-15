@@ -13,9 +13,9 @@ namespace Magazine.Entities
         public string Email { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
-        public ICollection<Paper> Papers { get; set; }
-        public Area Area { get; set; }  
-        public Magazine Magazine { get; set; }
+        public virtual ICollection<Paper> Papers { get; set; }
+        public virtual Area Area { get; set; }  
+        public virtual Magazine Magazine { get; set; }
 
     }
 }

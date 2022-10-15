@@ -8,15 +8,20 @@ using System.Threading.Tasks;
 namespace Magazine.Entities
 {
     //asocicion unidireccional
-    public partial class Paper : Evaluation  
+    public partial class Paper
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public UploadDate DateTime { get; set; }
-        public virtual ICollection<Person> CoAuthors { get; set; }
-        public virtual User Resiponble { get; set; }
-        public virtual Area BelongingArea { get; set; }
-        public virtual Area PublicationPendingArea { get; set; }
+        public Paper()
+        {
+            CoAuthors = new List<Person>(4);
+        }
 
+        public Paper(int id, string title, DateTime uploadDate, User responsible, Area belongingArea)
+        {
+            Id = id;
+            Title = title;
+            UploadDate = uploadDate;
+            Responsible = responsible;
+            BelongingArea = belongingArea;
+        }
     }
 }
