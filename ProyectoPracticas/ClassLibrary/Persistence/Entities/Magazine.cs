@@ -8,5 +8,10 @@ namespace Magazine.Entities
 {
     public partial class Magazine
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public ICollection<Issue> Issues { get; set; }
+        public ICollection<Area> Areas { get; set; }
+        public User ChiefEditor { get; set; }
     }
 }
