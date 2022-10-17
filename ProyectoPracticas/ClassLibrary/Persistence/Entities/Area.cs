@@ -17,5 +17,6 @@ namespace Magazine.Entities
         public virtual ICollection<Paper> EvaluationPending { get; set; }
         public virtual ICollection<Paper> PublicationPending { get; set; }
         public virtual User Editor { get; set; }
+        public virtual Magazine Magazine { get; set; }  
     }
 }
