@@ -8,5 +8,34 @@ namespace Magazine.Entities
 {
     public partial class Evaluation
     {
+        public bool Accepted 
+        {
+            get;
+            set;
+        }
+
+        public String Comments 
+        {
+            get;
+            set;
+        }
+
+        public DateTime Date 
+        {
+            get;
+            set;
+        }
+
+        public int Id 
+        {
+            get;
+            set;
+        }
+
+        public Paper Paper 
+        {
+            get;
+            set;
+        }
     }
 }
