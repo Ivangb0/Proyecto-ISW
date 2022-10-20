@@ -16,12 +16,12 @@ namespace Magazine.Entities
             PublicationPending = new List<Paper>();
         }
 
-        public Area(int Id, String Name, Magazine magazine)
+        public Area(int Id, String Name, Magazine magazine, User editor) : this()
         {
             this.Id = Id;
             this.Name = Name;
             this.Magazine = magazine;
-
+            this.Editor = editor;
         }
         
     }

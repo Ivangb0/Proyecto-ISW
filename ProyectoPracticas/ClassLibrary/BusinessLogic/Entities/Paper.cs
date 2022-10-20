@@ -15,13 +15,13 @@ namespace Magazine.Entities
             CoAuthors = new List<Person>(4);
         }
 
-        public Paper(int id, string title, DateTime uploadDate, User responsible, Area belongingArea)
+        public Paper(int id, string title, DateTime uploadDate, User responsible, Area belongingArea) : this()
         {
-            Id = id;
-            Title = title;
-            UploadDate = uploadDate;
-            Responsible = responsible;
-            BelongingArea = belongingArea;
+            this.Id = id;
+            this.Title = title;
+            this.UploadDate = uploadDate;
+            this.Responsible = responsible;
+            this.BelongingArea = belongingArea;
         }
     }
 }
