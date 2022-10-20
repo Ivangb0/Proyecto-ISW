@@ -12,6 +12,6 @@ namespace Magazine.Entities
         public int Number { get; set; }
         public DateTime? PublicationDate { get; set; }
         public virtual Magazine Magazine { get; set; }
-        public virtual ICollection<Paper> Paper { get; set; }
+        public virtual ICollection<Paper> PublishedPapers { get; set; }
     }
 }

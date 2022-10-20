@@ -32,10 +32,5 @@ namespace Magazine.Entities
             set;
         }
 
-        public Paper Paper 
-        {
-            get;
-            set;
-        }
     }
 }
