@@ -14,9 +14,8 @@ namespace Magazine.Entities
             Issues = new List<Issue>();
         }
 
-        public Magazine(int id, string name, User chiefEditor) : this() 
+        public Magazine(string name, User chiefEditor) : this() 
         {
-            this.Id = id;
             this.Name = name;
             this.ChiefEditor = chiefEditor; 
         }

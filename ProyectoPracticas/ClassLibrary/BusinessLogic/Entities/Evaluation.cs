@@ -10,12 +10,11 @@ namespace Magazine.Entities
     {
         public Evaluation() { }
 
-        public Evaluation(bool Accepted, String Comments, DateTime Date, int Id) : this()
+        public Evaluation(bool Accepted, String Comments, DateTime Date) : this()
         {
             this.Accepted = Accepted;
             this.Comments = Comments;
             this.Date = Date;
-            this.Id = Id;
         }
     }
 }

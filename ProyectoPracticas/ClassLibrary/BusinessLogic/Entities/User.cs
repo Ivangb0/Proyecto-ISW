@@ -14,7 +14,7 @@ namespace Magazine.Entities
             MainAuthoredPapers = new List<Paper>();
         }
 
-        public User(bool alerted, string areasOfInterest, string email, string login, string password, string id, string name, string surname) : base(id, name, surname)
+        public User(string id, string name, string surname, bool alerted, string areasOfInterest, string email, string login, string password) : base(id, name, surname)
         {
             this.MainAuthoredPapers = new List<Paper>();
             this.Alerted = alerted;
