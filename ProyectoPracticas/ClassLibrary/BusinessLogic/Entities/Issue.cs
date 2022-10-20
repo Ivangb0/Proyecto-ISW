@@ -14,11 +14,9 @@ namespace Magazine.Entities
 
         }
 
-        public Issue(int id, int number, DateTime? publicationDate, Magazine magazine) : this()
+        public Issue(int number, Magazine magazine) : this()
         {
-            this.Id = id;
             this.Number = number;
-            this.PublicationDate = publicationDate;
             this.Magazine = magazine;
         }
     }
