@@ -5,7 +5,6 @@ using System.Reflection;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Data.Entity.ModelConfiguration.Conventions;
-using Magazine.Entities;
 
 namespace Magazine.Persistence
 {
