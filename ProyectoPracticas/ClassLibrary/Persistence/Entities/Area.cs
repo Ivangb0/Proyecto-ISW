@@ -10,7 +10,6 @@ namespace Magazine.Entities
 {
     public partial class Area
     {
-        [Key]
         public int Id { get; set; }
         public String Name { get; set; }
         [InverseProperty("BelongingArea")]

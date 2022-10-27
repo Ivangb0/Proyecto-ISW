@@ -100,8 +100,8 @@ namespace DBTest
             dal.Commit();
 
             a.EvaluationPending.Add(articulo);
-            a.Papers.Add(articulo);
-            a.PublicationPending.Add(articulo);
+            //a.Papers.Add(articulo);
+            //a.PublicationPending.Add(articulo);
 
             Console.WriteLine("Nombre de la revista: " + m.Name);
             Console.WriteLine("  Editor de la revista: " + m.ChiefEditor.Name + " " + m.ChiefEditor.Surname);
