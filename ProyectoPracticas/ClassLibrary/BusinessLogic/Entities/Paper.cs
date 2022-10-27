@@ -21,7 +21,8 @@ namespace Magazine.Entities
             this.UploadDate = uploadDate;
             this.Responsible = responsible;
             this.BelongingArea = belongingArea;
-            CoAuthors.Add(new Person());
+            //CoAuthors.Add(new Person());
+            CoAuthors.Add(responsible);
         }
     }
 }
