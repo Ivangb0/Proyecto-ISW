@@ -83,12 +83,12 @@ namespace DBTest
             dal.Commit();
             
             User uEditor = new User("2002", "Juan", "Editor", false, "ninguna", "juan@gmail.com", "Editor", "2002");
-            dal.Insert<User>(u1);
+            dal.Insert<User>(uEditor);
             dal.Commit();
 
 
             User uResponsable = new User("0987", "Javier", "Responsible", false, "ninguna", "javier@gmail.com", "Responsible", "0987");
-            dal.Insert<User>(u1);
+            dal.Insert<User>(uResponsable);
             dal.Commit();
 
             Area a = new Area("Area", uEditor, m);
@@ -100,6 +100,8 @@ namespace DBTest
             dal.Commit();
 
             a.EvaluationPending.Add(articulo);
+            a.Papers.Add(articulo);
+            a.PublicationPending.Add(articulo);
 
             Console.WriteLine("Nombre de la revista: " + m.Name);
             Console.WriteLine("  Editor de la revista: " + m.ChiefEditor.Name + " " + m.ChiefEditor.Surname);
