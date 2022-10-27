@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ namespace Magazine.Entities
         public string Name { get; set; }
         public virtual ICollection<Issue> Issues { get; set; }
         public virtual ICollection<Area> Areas { get; set; }
+        [Required]
         public virtual User ChiefEditor { get; set; }
     }
 }
