@@ -63,6 +63,7 @@ namespace DBTest
             IDAL dal = new EntityFrameworkDAL(new MagazineDbContext());
 
             CreateSampleDB(dal);
+            PrintSampleDB(dal);
         }
 
         private void CreateSampleDB(IDAL dal)
@@ -111,7 +112,45 @@ namespace DBTest
             // Populate here the rest of the database with data
 
         }
+        // AÑADIR A DBTEST 
 
+        // Copiar a partir de aquí
+        private void PrintSampleDB(IDAL dal)
+        {
+            Console.WriteLine("\n\nMOSTRANDO LOS DATOS DE LA BD");
+            Console.WriteLine("============================\n");
+            Magazine.Entities.Magazine m = dal.GetWhere<Magazine.Entities.Magazine>(x => x.Name == "Revista Universitaria").First();
+
+            Console.WriteLine("Nombre de la revista: " + m.Name);
+            Console.WriteLine("  Editor de la revista: " + m.ChiefEditor.Name + " " + m.ChiefEditor.Surname);
+
+            foreach (Area a in m.Areas)
+            {
+                Console.WriteLine("    Area: " + a.Name + " Editor: " + a.Editor.Name + " " + a.Editor.Surname);
+                Console.WriteLine("      Enviados:");
+                foreach (Paper p in a.Papers)
+                {
+                    Console.WriteLine("        Artículo: " + p.Title + ",  " + p.Responsible.Name + " " + p.Responsible.Surname);
+                    foreach (Person pe in p.CoAuthors)
+                        Console.WriteLine("           CoAuthor: " + pe.Name + " " + pe.Surname);
+                }
+                Console.WriteLine("      Pendientes de evaluación:");
+                foreach (Paper p in a.EvaluationPending)
+                    Console.WriteLine("        Artículo: " + p.Title);
+                Console.WriteLine("      Pendientes de publicación:");
+                foreach (Paper p in a.PublicationPending)
+                    Console.WriteLine("        Artículo: " + p.Title);
+            }
+
+            Console.WriteLine();
+            foreach (Issue i in m.Issues)
+            {
+                Console.WriteLine("    Ejemplar número: " + i.Number);
+                foreach (Paper p in i.PublishedPapers)
+                    Console.WriteLine("        Artículo: " + p.Title + ",  " + p.Responsible.Name + " " + p.Responsible.Surname);
+            }
+        }
+        // Hasta aquí
     }
 
 }
