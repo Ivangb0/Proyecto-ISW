@@ -18,9 +18,12 @@ namespace Magazine.Services
         void AddPerson(Person p);
         void AddMagazine(Magazine.Entities.Magazine m);
         void AddArea(Area a);
-		
-		// A partir de aquí cread los vuestros
-		// void AddUser(User u);
 
+        // A partir de aquí cread los vuestros
+        void AddUser(User u);
+
+        void Login(string login, string password);
+
+        User UserLogged();
     }
 }

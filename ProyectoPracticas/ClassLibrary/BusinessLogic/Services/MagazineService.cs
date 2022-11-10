@@ -86,8 +86,36 @@ namespace Magazine.Services
             else throw new ServiceException("Area with name " + area.Name + " already exists.");
         }
 
-	// A partid de aquí escribid vuestras implementaciones
+        // A partid de aquí escribid vuestras implementaciones
+        public void AddUser(User u)
+        {
+            // Restricción: No puede haber dos areas con el mismo nombre
+            if (!dal.GetWhere<User>(x => x.Login == u.Login).Any() && !dal.GetWhere<User>(x => x.Email == u.Email).Any())
+            {
+                dal.Insert<User>(u);
+                dal.Commit();
+            }
+            else if (!dal.GetWhere<User>(x => x.Login == u.Login).Any())
+                throw new ServiceException("User with login " + u.Login + " already exists.");
+            else throw new ServiceException("User with email " + u.Email + " already exists.");
+        }
 
+        public int Login(string login, string password)
+        {
+            if (dal.GetWhere<User>(x => x.Login == login).Any())
+            {
+                if (dal.GetWhere<User>(x => x.Login == login && x.Password == password).Any())
+                {
+                    return 1;
+                }
+                else throw new ServiceException("Password is incorrect.");
+            }
+            else throw new ServiceException("User with login " + login + " doesn't exist.");
+        }
+        public User UserLogged()
+        {
+            return dal.GetWhere<User>(x => x.Alerted)[1];
+        }
 
     }
 }
