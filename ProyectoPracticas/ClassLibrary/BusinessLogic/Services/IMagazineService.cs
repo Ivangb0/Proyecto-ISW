@@ -22,10 +22,16 @@ namespace Magazine.Services
         // A partir de aquí cread los vuestros
         void AddUser(User u);
 
+        void AddPaper(Paper p);
+
         void Login(string login, string password);
 
         User UserLogged();
 
         void Logout();
+
+        Area FindAreaByName(string nombreArea);
+
+        Person FindAreaById(string id);
     }
 }

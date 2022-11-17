@@ -92,7 +92,7 @@ namespace Magazine.Services
         public void AddUser(User u)
         {
             // Restricción: No puede haber dos areas con el mismo nombre
-            if (!dal.GetWhere<User>(x => x.Login == u.Login).Any() && !dal.GetWhere<User>(x => x.Email == u.Email).Any())
+            if (!dal.GetWhere<User>(x => x.Login == u.Login && x.Email == u.Email).Any())
             {
                 dal.Insert<User>(u);
                 dal.Commit();
@@ -100,6 +100,17 @@ namespace Magazine.Services
             else if (!dal.GetWhere<User>(x => x.Login == u.Login).Any())
                 throw new ServiceException("User with login " + u.Login + " already exists.");
             else throw new ServiceException("User with email " + u.Email + " already exists.");
+        }
+
+        public void AddPaper(Paper p)
+        {
+            // No debe haber otro artículo con el mismo título
+            if (!dal.GetWhere<Paper>(x => x.Id == p.Id).Any())
+            {
+                dal.Insert<Paper>(p);
+                dal.Commit();
+            }
+            else throw new ServiceException("Ya existe existe este artículo");
         }
 
         public void Login(string login, string password)
@@ -124,6 +135,21 @@ namespace Magazine.Services
         {
             uLog = null;
         }
+        public Area FindAreaByName(string nombreArea)
+        {
+            Area area = dal.GetWhere<Area>(x => x.Name == nombreArea).First<Area>();
+            if (area != null) { return area; }
+            else throw new ServiceException("El área no existe");
+        }
+
+        public Person FindPersonById(string id)
+        {
+            Person person = dal.GetWhere<Person>(x => x.Id == id).First<Person>();
+            if (person != null) { return person; }
+            else return null;
+        }
+
+
 
     }
 }

@@ -23,5 +23,13 @@ namespace Magazine.Entities
             this.BelongingArea = belongingArea;
             CoAuthors.Add(responsible);
         }
+
+        public void AddCoAuthor(Person p)
+        {
+            if(CoAuthors.Count < 4)
+            {
+                this.CoAuthors.Add(p);
+            }
+        }
     }
 }
