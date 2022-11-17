@@ -104,13 +104,12 @@ namespace Magazine.Services
 
         public void Login(string login, string password)
         {
-            if (dal.GetWhere<User>(x => x.Login == login).Any())
+            User userAux = dal.GetWhere<User>(x => x.Login == login).First<User>();
+            if (userAux != null)
             {
-                if (dal.GetWhere<User>(x => x.Login == login && x.Password == password).Any())
+                if (userAux.Password == password)
                 {
-                    //var context = new MagazineDbContext();
-                    //uLog = context.Users.Single<User>(x => x.Login == login);
-                    uLog = dal.GetWhere<User>(x => x.Login == login).First<User>();
+                    uLog = userAux;
                 }
                 else throw new ServiceException("Password is incorrect.");
             }
