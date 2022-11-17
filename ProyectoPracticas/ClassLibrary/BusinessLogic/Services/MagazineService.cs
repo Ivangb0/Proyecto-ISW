@@ -13,6 +13,8 @@ namespace Magazine.Services
     {
         private readonly IDAL dal;
 
+        private User uLog = null;
+
         public MagazineService(IDAL dal)
         {
             this.dal = dal;
@@ -100,13 +102,15 @@ namespace Magazine.Services
             else throw new ServiceException("User with email " + u.Email + " already exists.");
         }
 
-        public int Login(string login, string password)
+        public void Login(string login, string password)
         {
             if (dal.GetWhere<User>(x => x.Login == login).Any())
             {
                 if (dal.GetWhere<User>(x => x.Login == login && x.Password == password).Any())
                 {
-                    return 1;
+                    //var context = new MagazineDbContext();
+                    //uLog = context.Users.Single<User>(x => x.Login == login);
+                    uLog = dal.GetWhere<User>(x => x.Login == login).First<User>();
                 }
                 else throw new ServiceException("Password is incorrect.");
             }
@@ -114,7 +118,12 @@ namespace Magazine.Services
         }
         public User UserLogged()
         {
-            return dal.GetWhere<User>(x => x.Alerted)[1];
+            return uLog;
+        }
+
+        public void Logout()
+        {
+            uLog = null;
         }
 
     }

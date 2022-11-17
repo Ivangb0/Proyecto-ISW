@@ -25,5 +25,7 @@ namespace Magazine.Services
         void Login(string login, string password);
 
         User UserLogged();
+
+        void Logout();
     }
 }
