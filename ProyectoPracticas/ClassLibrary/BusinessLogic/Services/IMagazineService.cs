@@ -32,6 +32,6 @@ namespace Magazine.Services
 
         Area FindAreaByName(string nombreArea);
 
-        Person FindAreaById(string id);
+        Person FindPersonById(string id);
     }
 }
