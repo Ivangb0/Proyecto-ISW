@@ -149,7 +149,24 @@ namespace Magazine.Services
             else return null;
         }
 
+        public Magazine.Entities.Magazine GetMagazine()
+        {
+            Magazine.Entities.Magazine revista = dal.GetAll<Magazine.Entities.Magazine>().First<Magazine.Entities.Magazine>();
+            return revista;
+        }
 
+        public void AddIssue(Issue i)
+        {
+            // Si el Issue ya existe, al modificarlo hay que borrarlo y volver a insertar el nuevo
+            Issue aux = dal.GetWhere<Issue>(x => x.Id == i.Id).First<Issue>();
+            if (aux != null)
+            {
+                dal.Delete<Issue>(aux);
+                dal.Insert<Issue>(i);
+                dal.Commit();
+            }
+            else dal.Insert<Issue>(i);
+        }
 
     }
 }

@@ -19,5 +19,15 @@ namespace Magazine.Entities
             this.Number = number;
             this.Magazine = magazine;
         }
+
+        public void AddPaper(Paper p)
+        {
+            this.PublishedPapers.Add(p);
+        }
+
+        public void RemovePaper(Paper p) 
+        { 
+            this.PublishedPapers.Remove(p); 
+        }
     }
 }

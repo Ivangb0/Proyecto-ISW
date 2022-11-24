@@ -24,6 +24,8 @@ namespace Magazine.Services
 
         void AddPaper(Paper p);
 
+        void AddIssue(Issue i);
+
         void Login(string login, string password);
 
         User UserLogged();
@@ -33,5 +35,7 @@ namespace Magazine.Services
         Area FindAreaByName(string nombreArea);
 
         Person FindPersonById(string id);
+
+        Magazine.Entities.Magazine GetMagazine(); 
     }
 }

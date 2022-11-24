@@ -19,5 +19,12 @@ namespace Magazine.Entities
             this.Name = name;
             this.ChiefEditor = chiefEditor; 
         }
+
+        public Issue LastIssueNotPublished()
+        {
+            Issue aux = this.Issues.Last<Issue>();
+            if (DateTime.Today > aux.PublicationDate) { return new Issue(); }
+            return aux;
+        };
     }
 }
