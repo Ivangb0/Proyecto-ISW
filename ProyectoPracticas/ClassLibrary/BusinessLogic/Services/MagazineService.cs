@@ -168,5 +168,24 @@ namespace Magazine.Services
             else dal.Insert<Issue>(i);
         }
 
+        public ICollection<Area> GetAllAreas()
+        {
+            return (ICollection<Area>)dal.GetAll<Area>();
+        }
+
+        public ICollection<Paper> ShowData(ICollection<Area> areas)
+        {
+            ICollection<Paper> res = new List<Paper>();
+            for(int i = 0; i < areas.Count; i++)
+            {
+                ICollection<Paper> aux = areas.ElementAt(i).GetPapers();
+                for (int j = 0; j < aux.Count; j++)
+                {
+                    res.Add(aux.ElementAt(i));
+                } 
+            }
+
+            return res;
+        }
     }
 }

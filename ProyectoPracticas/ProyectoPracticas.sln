@@ -22,6 +22,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagazinePersistenceTests", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3-BusinessLogicTest", "BusinessLogicTest\3-BusinessLogicTest.csproj", "{B08CF855-97C2-48EF-B0EE-D21F0883C6CF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Interfaz", "Interfaz", "{52F5DCAD-54CA-462D-9265-C5F1C2EF2D8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterfazProyecto", "InterfazProyecto\InterfazProyecto.csproj", "{21E5D577-39A3-43FB-BF17-952EEC7741F1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,6 +52,10 @@ Global
 		{B08CF855-97C2-48EF-B0EE-D21F0883C6CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B08CF855-97C2-48EF-B0EE-D21F0883C6CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B08CF855-97C2-48EF-B0EE-D21F0883C6CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21E5D577-39A3-43FB-BF17-952EEC7741F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21E5D577-39A3-43FB-BF17-952EEC7741F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21E5D577-39A3-43FB-BF17-952EEC7741F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21E5D577-39A3-43FB-BF17-952EEC7741F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,6 +66,7 @@ Global
 		{8CDA3B87-D61A-42AC-84DC-D548408E5B6C} = {543832DC-E17A-42F6-92BB-C67F38547AC1}
 		{54877077-11BB-48B1-BC83-F287F137CF21} = {543832DC-E17A-42F6-92BB-C67F38547AC1}
 		{B08CF855-97C2-48EF-B0EE-D21F0883C6CF} = {543832DC-E17A-42F6-92BB-C67F38547AC1}
+		{21E5D577-39A3-43FB-BF17-952EEC7741F1} = {52F5DCAD-54CA-462D-9265-C5F1C2EF2D8E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3B637CF0-A611-47BB-A190-B9ADECFC95BC}

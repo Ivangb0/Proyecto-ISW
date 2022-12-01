@@ -22,6 +22,15 @@ namespace Magazine.Entities
             this.Magazine = magazine;
             this.Editor = editor;
         }
-        
+        public ICollection<Paper> GetPapers()
+        {
+            ICollection<Paper> papeles = new List<Paper>();
+            for (int i = 0; i < this.Papers.Count; i++)
+            {                 
+                    papeles.Add(this.Papers.ElementAt(i));                
+            }
+
+            return papeles;
+        }
     }
 }

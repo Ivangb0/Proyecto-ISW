@@ -25,6 +25,6 @@ namespace Magazine.Entities
             Issue aux = this.Issues.Last<Issue>();
             if (DateTime.Today > aux.PublicationDate) { return new Issue(); }
             return aux;
-        };
+        }
     }
 }
