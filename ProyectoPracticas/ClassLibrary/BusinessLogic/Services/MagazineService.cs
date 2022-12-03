@@ -187,5 +187,29 @@ namespace Magazine.Services
 
             return res;
         }
+        public ICollection<Paper> ReturnEvaluationPending(string nombreArea)
+        {
+            Area a = FindAreaByName(nombreArea);
+            return a.EvaluationPending;
+            //if (a != null) { return a.EvaluationPending; } ??
+            //else return null;
+        }
+
+        public void setEvPaper(Area a, Paper paper, string comentarios, Boolean acepted)
+        {
+            
+            Paper p = dal.GetWhere<Paper>(x => x.Id == paper.Id).First<Paper>();
+            p.Evaluation = new Evaluation(acepted, comentarios, DateTime.Today);
+
+            if (p.Evaluation.Accepted)
+            {
+               a.PublicationPending.Add(p);
+            }
+
+            a.EvaluationPending.Remove(p);
+        }
+
     }
+
+
 }

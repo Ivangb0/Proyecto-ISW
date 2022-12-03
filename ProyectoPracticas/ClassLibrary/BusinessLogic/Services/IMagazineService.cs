@@ -39,5 +39,7 @@ namespace Magazine.Services
         Magazine.Entities.Magazine GetMagazine();
         ICollection<Area> GetAllAreas();
         ICollection<Paper> ShowData(ICollection<Area> areas);
+        ICollection<Paper> ReturnEvaluationPending(string nombreArea);
+        void setEvPaper(Area a, Paper paper, string comentarios, Boolean acepted);
     }
 }
