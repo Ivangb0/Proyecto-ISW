@@ -25,14 +25,58 @@ namespace InterfazProyecto
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void IniciarSesion_Click(object sender, EventArgs e)
+        {
+            string login = this.login.Text;
+            string password = this.password.Text;
+            try 
+            { 
+                service.Login(login, password); 
+            } 
+            catch (ServiceException s) 
+            {
+                this.MensajeError.Visible = true;
+                this.MensajeError.Text = s.Message;
+            }
+            
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void IrARegistro_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+
+            Registro r1 = new Registro(service);
+            r1.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Salir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -56,6 +56,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfeccionarEjemplar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfeccionarEjemplar.Designer.cs">
+      <DependentUpon>ConfeccionarEjemplar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnviarArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnviarArticulo.Designer.cs">
+      <DependentUpon>EnviarArticulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EvaluarArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EvaluarArticulo.Designer.cs">
+      <DependentUpon>EvaluarArticulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListadoDeArticulos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListadoDeArticulos.Designer.cs">
+      <DependentUpon>ListadoDeArticulos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Opciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Opciones.Designer.cs">
+      <DependentUpon>Opciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registro.Designer.cs">
+      <DependentUpon>Registro.cs</DependentUpon>
+    </Compile>
     <Compile Include="MagazineApp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +100,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ConfeccionarEjemplar.resx">
+      <DependentUpon>ConfeccionarEjemplar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnviarArticulo.resx">
+      <DependentUpon>EnviarArticulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EvaluarArticulo.resx">
+      <DependentUpon>EvaluarArticulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListadoDeArticulos.resx">
+      <DependentUpon>ListadoDeArticulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Opciones.resx">
+      <DependentUpon>Opciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registro.resx">
+      <DependentUpon>Registro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MagazineApp.resx">
       <DependentUpon>MagazineApp.cs</DependentUpon>
     </EmbeddedResource>

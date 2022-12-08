@@ -115,6 +115,9 @@ namespace Magazine.Services
 
         public void Login(string login, string password)
         {
+            if (login.Length == 0) { throw new ServiceException("Introduce un login"); }
+            if (password.Length == 0) { throw new ServiceException("Introduce una contraseña"); }
+
             User userAux = dal.GetWhere<User>(x => x.Login == login).First<User>();
             if (userAux != null)
             {
@@ -145,6 +148,13 @@ namespace Magazine.Services
         public Person FindPersonById(string id)
         {
             Person person = dal.GetWhere<Person>(x => x.Id == id).First<Person>();
+            if (person != null) { return person; }
+            else return null;
+        }
+
+        public Person FindPersonByName(string name, string surname)
+        {
+            Person person = dal.GetWhere<Person>(x => x.Name == name && x.Surname == surname).First<Person>();
             if (person != null) { return person; }
             else return null;
         }

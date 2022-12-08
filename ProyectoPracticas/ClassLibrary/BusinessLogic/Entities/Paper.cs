@@ -31,5 +31,26 @@ namespace Magazine.Entities
                 this.CoAuthors.Add(p);
             }
         }
+
+        public override string ToString()
+        {
+            string res = "";
+            res += "Titulo: " + this.Title + ".\n";
+            res += "Autor: " + this.Responsible + ".\n";
+            res += "CoAutores: ";
+            for (int i = 0; i < CoAuthors.Count - 1; i++)
+            {
+                res += CoAuthors.ElementAt(i).Name + CoAuthors.ElementAt(i).Surname + ",";
+            }
+
+            if (CoAuthors.Count > 0)
+            {
+                res += CoAuthors.ElementAt(CoAuthors.Count - 1).Name + CoAuthors.ElementAt(CoAuthors.Count - 1).Surname + ". \n";
+            }
+
+            res += "Estado: " + this.Evaluation.ToString() + ".\n" ;
+
+            return res;
+        }
     }
 }
