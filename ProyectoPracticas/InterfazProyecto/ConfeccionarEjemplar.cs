@@ -15,8 +15,9 @@ namespace InterfazProyecto
     public partial class ConfeccionarEjemplar : Form
     {
         private IMagazineService service;
-        Issue i1;
-        Area a;
+        private Issue i1;
+        private Area a;
+        private ICollection<Paper> papersArea = new List<Paper>();
         public ConfeccionarEjemplar(IMagazineService service)
         {
             InitializeComponent();
@@ -40,7 +41,14 @@ namespace InterfazProyecto
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             a = (Area)comboBoxAreas.SelectedItem;
-            ArticulosPublicados.DataSource = i1.PublishedPapers;
+            foreach (Paper p in i1.PublishedPapers)
+            {
+                if(p.BelongingArea == a)
+                {
+                    papersArea.Add(p);
+                }
+            }
+            ArticulosPublicados.DataSource = papersArea;
             ArticulosPendientes.DataSource = a.PublicationPending;
         }
 
@@ -55,18 +63,20 @@ namespace InterfazProyecto
         private void button1_Click(object sender, EventArgs e)
         {
             Paper p = (Paper) ArticulosPendientes.SelectedItem;
-            i1.PublishedPapers.Add(p);
-            a.PublicationPending.Remove(p);
-            ArticulosPublicados.DataSource = i1.PublishedPapers;
+            i1.AddPaper(p);
+            a.RemovePaperPubl(p);
+            papersArea.Add(p);
+            ArticulosPublicados.DataSource = papersArea;
             ArticulosPendientes.DataSource = a.PublicationPending;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             Paper p = (Paper) ArticulosPublicados.SelectedItem;
-            i1.PublishedPapers.Remove(p);
-            a.PublicationPending.Add(p);
-            ArticulosPublicados.DataSource = i1.PublishedPapers;
+            i1.RemovePaper(p);
+            a.AddPaperPubl(p);
+            papersArea.Remove(p);
+            ArticulosPublicados.DataSource = papersArea;
             ArticulosPendientes.DataSource = a.PublicationPending;
         }
 

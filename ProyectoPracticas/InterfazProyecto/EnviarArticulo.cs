@@ -16,6 +16,8 @@ namespace InterfazProyecto
     {
         private IMagazineService service;
         private ICollection<Person> coAutors = new List<Person>();
+        private string area;
+        private Area a;
         public EnviarArticulo(IMagazineService service)
         {
             InitializeComponent();
@@ -24,7 +26,15 @@ namespace InterfazProyecto
 
         private void EnviarArticulo_Load(object sender, EventArgs e)
         {
-
+            ICollection<string> areasNombre = new List<string>();
+            ICollection<Area> areas = service.GetAllAreas();
+            
+            foreach (Area a in areas)
+            {
+                areasNombre.Add(a.Name);
+            }
+            
+            AreasBox.DataSource = areasNombre;
         }
 
         private void AddCoAuthor_Click(object sender, EventArgs e)
@@ -96,8 +106,6 @@ namespace InterfazProyecto
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            string area = AreasBox.Text;
-            Area a = null;
             try
             {
                 a = service.FindAreaByName(area);
@@ -110,9 +118,14 @@ namespace InterfazProyecto
 
                     Paper p = new Paper(title, uploadDate, a, u);
 
-                    if(coAutors.Count > 0)
+                    //if(coAutors.Count > 0)
+                    //{
+                    //    p.CoAuthors = coAutors;
+                    //}
+
+                    foreach (Person coAut in coAutors)
                     {
-                        p.CoAuthors = coAutors;
+                        p.AddCoAuthor(coAut);
                     }
 
                     service.AddPaper(p);
@@ -134,6 +147,11 @@ namespace InterfazProyecto
                 MensajeError.Text = s.Message;
                 MensajeError.Visible = true;
             }
+        }
+
+        private void AreasBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            area = AreasBox.Text;
         }
     }
 }

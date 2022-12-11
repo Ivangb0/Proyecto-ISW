@@ -67,6 +67,7 @@
             this.AreasBox.Name = "AreasBox";
             this.AreasBox.Size = new System.Drawing.Size(121, 24);
             this.AreasBox.TabIndex = 2;
+            this.AreasBox.SelectedIndexChanged += new System.EventHandler(this.AreasBox_SelectedIndexChanged);
             // 
             // label2
             // 

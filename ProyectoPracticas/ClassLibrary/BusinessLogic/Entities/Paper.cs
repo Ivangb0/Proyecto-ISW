@@ -29,7 +29,7 @@ namespace Magazine.Entities
             if(CoAuthors.Count < 4)
             {
                 this.CoAuthors.Add(p);
-            }
+            } 
         }
 
         public override string ToString()

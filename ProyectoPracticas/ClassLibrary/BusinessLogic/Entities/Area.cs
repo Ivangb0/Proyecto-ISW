@@ -32,5 +32,14 @@ namespace Magazine.Entities
 
             return papeles;
         }
+
+        public void AddPaperPubl(Paper p) 
+        {
+            this.PublicationPending.Add(p);
+        }
+        public void RemovePaperPubl(Paper p)
+        {
+            this.PublicationPending.Remove(p);
+        }
     }
 }
