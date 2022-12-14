@@ -219,6 +219,13 @@ namespace Magazine.Services
             a.EvaluationPending.Remove(p);
         }
 
+        public Paper findPaperByName(String titulo) 
+        {
+            Paper p = dal.GetWhere<Paper>(x => x.Title == titulo).First<Paper>();
+            if (p != null) { return p; }
+            else return null;
+        }
+
     }
 
 

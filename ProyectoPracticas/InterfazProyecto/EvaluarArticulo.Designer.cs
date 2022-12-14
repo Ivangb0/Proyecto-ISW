@@ -28,20 +28,95 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.label1 = new System.Windows.Forms.Label();
+            this.BoxAreas = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.noEvaluados = new System.Windows.Forms.ListView();
+            this.titulo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.autor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.fecha = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(267, 88);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(106, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Selecciona area";
+            // 
+            // BoxAreas
+            // 
+            this.BoxAreas.FormattingEnabled = true;
+            this.BoxAreas.Location = new System.Drawing.Point(392, 88);
+            this.BoxAreas.Name = "BoxAreas";
+            this.BoxAreas.Size = new System.Drawing.Size(121, 24);
+            this.BoxAreas.TabIndex = 1;
+            this.BoxAreas.SelectedIndexChanged += new System.EventHandler(this.BoxArea_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(56, 177);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(264, 16);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Artículos sin evaluar del área seleccionada";
+            // 
+            // noEvaluados
+            // 
+            this.noEvaluados.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.titulo,
+            this.autor,
+            this.fecha});
+            this.noEvaluados.HideSelection = false;
+            this.noEvaluados.Location = new System.Drawing.Point(59, 218);
+            this.noEvaluados.Name = "noEvaluados";
+            this.noEvaluados.Size = new System.Drawing.Size(553, 157);
+            this.noEvaluados.TabIndex = 4;
+            this.noEvaluados.UseCompatibleStateImageBehavior = false;
+            this.noEvaluados.View = System.Windows.Forms.View.Details;
+            this.noEvaluados.SelectedIndexChanged += new System.EventHandler(this.noEvaluados_SelectedIndexChanged);
+            this.noEvaluados.Click += new System.EventHandler(this.articuloSeleccionado);
+            // 
+            // titulo
+            // 
+            this.titulo.Text = "Titulo";
+            // 
+            // autor
+            // 
+            this.autor.Text = "Autor";
+            // 
+            // fecha
+            // 
+            this.fecha.Text = "Fecha de envío";
             // 
             // EvaluarArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.noEvaluados);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.BoxAreas);
+            this.Controls.Add(this.label1);
             this.Name = "EvaluarArticulo";
             this.Text = "Evaluar Artículo";
             this.Load += new System.EventHandler(this.EvaluarArticulo_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox BoxAreas;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ListView noEvaluados;
+        private System.Windows.Forms.ColumnHeader titulo;
+        private System.Windows.Forms.ColumnHeader autor;
+        private System.Windows.Forms.ColumnHeader fecha;
     }
 }
