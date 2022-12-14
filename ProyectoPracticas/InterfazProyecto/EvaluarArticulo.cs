@@ -39,18 +39,7 @@ namespace InterfazProyecto
             //Obtenemos el area que ha sido seleccionada
             areaSelec = (Area)BoxAreas.SelectedItem;
             //Añadimos a la listBox los articulos pendientes de evaluar
-            foreach (Paper p in areaSelec.EvaluationPending) 
-            {
-                papersAreaSelec.Add(p);
-            }
-            foreach (Paper p in papersAreaSelec) 
-            {
-                string titulo = p.Title;
-                string autor = p.Responsible.Name;
-                string fecha = p.UploadDate.ToString();
-                //Añadimos el artículo con su título, autor y fecha
-                noEvaluados.Items.Add(titulo + ", " + autor + ", " + fecha);
-            }
+            noEvaluados.DataSource = areaSelec.EvaluationPending;
         }
 
         private void articuloSeleccionado(object sender, EventArgs e)
