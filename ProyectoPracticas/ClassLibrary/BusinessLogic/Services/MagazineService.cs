@@ -180,7 +180,7 @@ namespace Magazine.Services
 
         public ICollection<Area> GetAllAreas()
         {
-            return (ICollection<Area>)dal.GetAll<Area>();
+            return dal.GetAll<Area>().ToList();
         }
 
         public ICollection<Paper> ShowData(ICollection<Area> areas)
