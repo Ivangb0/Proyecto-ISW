@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Magazine.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,7 +23,14 @@ namespace Magazine.Entities
 
         public Issue LastIssueNotPublished()
         {
-            Issue aux = this.Issues.Last<Issue>();
+            Issue aux = null;
+            try 
+            {
+                aux = this.Issues.Last<Issue>();
+            } catch (ServiceException s) 
+            {
+                
+            }
             if (DateTime.Today > aux.PublicationDate) { return new Issue(); }
             return aux;
         }

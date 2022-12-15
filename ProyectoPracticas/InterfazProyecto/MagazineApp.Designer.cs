@@ -37,6 +37,7 @@
             this.IrARegistro = new System.Windows.Forms.LinkLabel();
             this.MensajeError = new System.Windows.Forms.Label();
             this.Salir = new System.Windows.Forms.Button();
+            this.InicializaDatos = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -125,11 +126,22 @@
             this.Salir.UseVisualStyleBackColor = true;
             this.Salir.Click += new System.EventHandler(this.Salir_Click);
             // 
+            // InicializaDatos
+            // 
+            this.InicializaDatos.Location = new System.Drawing.Point(354, 393);
+            this.InicializaDatos.Name = "InicializaDatos";
+            this.InicializaDatos.Size = new System.Drawing.Size(75, 23);
+            this.InicializaDatos.TabIndex = 9;
+            this.InicializaDatos.Text = "Datos";
+            this.InicializaDatos.UseVisualStyleBackColor = true;
+            this.InicializaDatos.Click += new System.EventHandler(this.InicializaDatos_Click);
+            // 
             // MagazineApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(810, 463);
+            this.Controls.Add(this.InicializaDatos);
             this.Controls.Add(this.Salir);
             this.Controls.Add(this.MensajeError);
             this.Controls.Add(this.IrARegistro);
@@ -158,6 +170,7 @@
         private System.Windows.Forms.LinkLabel IrARegistro;
         private System.Windows.Forms.Label MensajeError;
         private System.Windows.Forms.Button Salir;
+        private System.Windows.Forms.Button InicializaDatos;
     }
 }
 

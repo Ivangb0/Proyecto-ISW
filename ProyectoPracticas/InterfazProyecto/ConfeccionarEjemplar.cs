@@ -23,7 +23,16 @@ namespace InterfazProyecto
             InitializeComponent();
             this.service = service;
             Magazine.Entities.Magazine m = service.GetMagazine();
-            i1 = m.LastIssueNotPublished();
+            
+            try
+            {
+                i1 = m.LastIssueNotPublished();
+            } 
+            catch (ServiceException s)
+            {
+                MensajeError.Text = s.Message;
+            }
+            
             this.nRevista.Text = i1.Id.ToString();
             comboBoxAreas.DataSource = service.GetAllAreas();
         }

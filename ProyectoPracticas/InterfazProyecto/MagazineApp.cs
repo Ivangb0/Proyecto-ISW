@@ -46,7 +46,13 @@ namespace InterfazProyecto
             string password = this.password.Text;
             try 
             { 
-                service.Login(login, password); 
+                service.Login(login, password);
+
+                this.Hide();
+
+                Opciones r1 = new Opciones(service);
+                r1.Show();
+
             } 
             catch (ServiceException s) 
             {
@@ -77,6 +83,11 @@ namespace InterfazProyecto
         private void Salir_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void InicializaDatos_Click(object sender, EventArgs e)
+        {
+            service.DBInitialization();
         }
     }
 }
