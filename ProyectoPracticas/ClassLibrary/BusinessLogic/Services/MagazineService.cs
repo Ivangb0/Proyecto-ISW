@@ -118,16 +118,21 @@ namespace Magazine.Services
             if (login.Length == 0) { throw new ServiceException("Introduce un login"); }
             if (password.Length == 0) { throw new ServiceException("Introduce una contraseña"); }
 
-            User userAux = dal.GetWhere<User>(x => x.Login == login).First<User>();
-            if (userAux != null)
+            User userAux = null;
+
+            try
             {
+                userAux = dal.GetWhere<User>(x => x.Login == login).First<User>();
+            } 
+            catch (Exception e)
+            {
+                throw new ServiceException("User with login " + login + " doesn't exist.");
+            }                       
                 if (userAux.Password == password)
                 {
                     uLog = userAux;
                 }
-                else throw new ServiceException("Password is incorrect.");
-            }
-            else throw new ServiceException("User with login " + login + " doesn't exist.");
+                else throw new ServiceException("Password is incorrect."); 
         }
         public User UserLogged()
         {

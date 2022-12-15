@@ -110,6 +110,8 @@
             this.RegPassword.Name = "RegPassword";
             this.RegPassword.Size = new System.Drawing.Size(198, 22);
             this.RegPassword.TabIndex = 6;
+            this.RegPassword.UseSystemPasswordChar = true;
+            this.RegPassword.TextChanged += new System.EventHandler(this.RegPassword_TextChanged);
             // 
             // RegConfPassword
             // 
@@ -117,6 +119,7 @@
             this.RegConfPassword.Name = "RegConfPassword";
             this.RegConfPassword.Size = new System.Drawing.Size(198, 22);
             this.RegConfPassword.TabIndex = 7;
+            this.RegConfPassword.UseSystemPasswordChar = true;
             // 
             // btnRegistrarse
             // 
@@ -234,7 +237,7 @@
             // 
             // Salir
             // 
-            this.Salir.Location = new System.Drawing.Point(639, 385);
+            this.Salir.Location = new System.Drawing.Point(56, 378);
             this.Salir.Name = "Salir";
             this.Salir.Size = new System.Drawing.Size(75, 23);
             this.Salir.TabIndex = 21;

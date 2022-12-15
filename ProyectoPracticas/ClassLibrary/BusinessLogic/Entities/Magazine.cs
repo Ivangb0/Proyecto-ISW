@@ -24,14 +24,16 @@ namespace Magazine.Entities
         public Issue LastIssueNotPublished()
         {
             Issue aux = null;
-            try 
+            try
             {
                 aux = this.Issues.Last<Issue>();
-            } catch (ServiceException s) 
+            } 
+            catch (Exception e)
             {
-                
+                aux = null;
             }
-            if (DateTime.Today > aux.PublicationDate) { return new Issue(); }
+            
+            if (aux == null || aux.PublicationDate == null || DateTime.Today > aux.PublicationDate) { return new Issue(); }
             return aux;
         }
     }

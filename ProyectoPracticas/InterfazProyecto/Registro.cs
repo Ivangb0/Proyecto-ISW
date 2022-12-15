@@ -94,5 +94,10 @@ namespace InterfazProyecto
         {
             Application.Exit();
         }
+
+        private void RegPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

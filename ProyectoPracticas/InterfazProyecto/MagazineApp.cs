@@ -89,5 +89,10 @@ namespace InterfazProyecto
         {
             service.DBInitialization();
         }
+
+        private void password_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
