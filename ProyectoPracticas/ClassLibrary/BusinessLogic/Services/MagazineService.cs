@@ -62,7 +62,7 @@ namespace Magazine.Services
             {
                 dal.Insert<Person>(person);
                 dal.Commit();
-            }
+            } 
             else throw new ServiceException("Person with Id " + person.Id + " already exists.");
         }
 
@@ -154,7 +154,16 @@ namespace Magazine.Services
 
         public Person FindPersonByName(string name, string surname)
         {
-            Person person = dal.GetWhere<Person>(x => x.Name == name && x.Surname == surname).First<Person>();
+
+            Person person = null;
+            try
+            {
+                person = dal.GetWhere<Person>(x => x.Name == name && x.Surname == surname).First<Person>();
+            } catch(Exception e)
+            {
+                return null;
+            }
+            
             if (person != null) { return person; }
             else return null;
         }
