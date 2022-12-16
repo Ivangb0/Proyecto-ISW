@@ -37,11 +37,12 @@ namespace Magazine.Services
         Person FindPersonById(string id);
 
         Person FindPersonByName(string name, string surname);
-
+        
         Magazine.Entities.Magazine GetMagazine();
         ICollection<Area> GetAllAreas();
         ICollection<Paper> ShowData(ICollection<Area> areas);
         ICollection<Paper> ReturnEvaluationPending(string nombreArea);
         void setEvPaper(Area a, Paper paper, string comentarios, Boolean acepted);
+        Paper FindPaperByTitle(String title);
     }
 }

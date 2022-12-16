@@ -159,17 +159,9 @@ namespace Magazine.Services
 
         public Person FindPersonByName(string name, string surname)
         {
-
-            Person person = null;
-            try
-            {
-                person = dal.GetWhere<Person>(x => x.Name == name && x.Surname == surname).First<Person>();
-            } catch(Exception e)
-            {
-                return null;
-            }
             
-            if (person != null) { return person; }
+            IEnumerable<Person> person = dal.GetWhere<Person>(x => x.Name == name && x.Surname == surname);
+            if (person.Count<Person>() != 0) { return person.First<Person>(); }
             else return null;
         }
 
@@ -233,7 +225,7 @@ namespace Magazine.Services
             a.EvaluationPending.Remove(p);
         }
 
-        public Paper findPaperByName(String titulo) 
+        public Paper FindPaperByTitle(String titulo) 
         {
             Paper p = dal.GetWhere<Paper>(x => x.Title == titulo).First<Paper>();
             if (p != null) { return p; }
