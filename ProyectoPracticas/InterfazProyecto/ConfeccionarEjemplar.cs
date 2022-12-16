@@ -34,6 +34,14 @@ namespace InterfazProyecto
             }
             
             this.nRevista.Text = i1.Id.ToString();
+            /*PROBAR ESTO PARA QUE SALGAN LAS AREAS EN EL COMBOBOX
+            ICollection<string> areasNombre = new List<string>();
+            ICollection<Area> areas = service.GetAllAreas();
+            foreach (Area a in areas)
+            {
+                areasNombre.Add(a.Name);
+            }
+            comboBoxAreas.DataSource = areasNombre;*/
             comboBoxAreas.DataSource = service.GetAllAreas();
         }
 
@@ -50,6 +58,10 @@ namespace InterfazProyecto
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             a = (Area)comboBoxAreas.SelectedItem;
+            /*PROBAR ESTO A VER SI DESAPARECE EL ERROR
+            String aarea = (String)comboBoxAreas.SelectedItem;
+            Area a = service.FindAreaByName(aarea);
+            */
             foreach (Paper p in i1.PublishedPapers)
             {
                 if(p.BelongingArea == a)

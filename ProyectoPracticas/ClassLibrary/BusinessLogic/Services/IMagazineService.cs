@@ -37,6 +37,7 @@ namespace Magazine.Services
         Person FindPersonById(string id);
 
         Person FindPersonByName(string name, string surname);
+        Paper FindPaperByTitle(String titulo);
 
         Magazine.Entities.Magazine GetMagazine();
         ICollection<Area> GetAllAreas();

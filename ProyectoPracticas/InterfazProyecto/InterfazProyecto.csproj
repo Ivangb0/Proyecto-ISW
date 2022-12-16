@@ -56,6 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AñadeComentario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AñadeComentario.Designer.cs">
+      <DependentUpon>AñadeComentario.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConfeccionarEjemplar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +106,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AñadeComentario.resx">
+      <DependentUpon>AñadeComentario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConfeccionarEjemplar.resx">
       <DependentUpon>ConfeccionarEjemplar.cs</DependentUpon>
     </EmbeddedResource>
