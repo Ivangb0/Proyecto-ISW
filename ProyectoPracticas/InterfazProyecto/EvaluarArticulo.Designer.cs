@@ -31,7 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.BoxAreas = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.noEvaluados = new System.Windows.Forms.ListView();
+            this.noEvaluados = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // label1
@@ -63,14 +63,12 @@
             // 
             // noEvaluados
             // 
-            this.noEvaluados.HideSelection = false;
-            this.noEvaluados.Location = new System.Drawing.Point(59, 206);
+            this.noEvaluados.FormattingEnabled = true;
+            this.noEvaluados.ItemHeight = 16;
+            this.noEvaluados.Location = new System.Drawing.Point(59, 218);
             this.noEvaluados.Name = "noEvaluados";
-            this.noEvaluados.Size = new System.Drawing.Size(639, 179);
+            this.noEvaluados.Size = new System.Drawing.Size(635, 148);
             this.noEvaluados.TabIndex = 4;
-            this.noEvaluados.UseCompatibleStateImageBehavior = false;
-            this.noEvaluados.View = System.Windows.Forms.View.Details;
-            this.noEvaluados.Click += new System.EventHandler(this.PaperSeleccionado);
             // 
             // EvaluarArticulo
             // 
@@ -94,6 +92,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox BoxAreas;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListView noEvaluados;
+        private System.Windows.Forms.ListBox noEvaluados;
     }
 }

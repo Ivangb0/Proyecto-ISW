@@ -104,6 +104,7 @@
             this.Controls.Add(this.EvaluarArticulo);
             this.Controls.Add(this.EnviarArticulo);
             this.Name = "Opciones";
+            this.Text = "Opciones";
             this.Load += new System.EventHandler(this.Opciones_Load);
             this.ResumeLayout(false);
 
