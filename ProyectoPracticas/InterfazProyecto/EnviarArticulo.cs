@@ -153,5 +153,10 @@ namespace InterfazProyecto
         {
             area = AreasBox.Text;
         }
+
+        private void CoAutorSurname_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

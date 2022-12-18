@@ -77,5 +77,13 @@ namespace InterfazProyecto
                 modif.ShowDialog();
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            Opciones o1 = new Opciones(service);
+            o1.Show();
+        }
     }
 }

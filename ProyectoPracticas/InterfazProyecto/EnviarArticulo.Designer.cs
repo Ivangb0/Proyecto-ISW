@@ -47,42 +47,45 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(270, 134);
+            this.label1.Location = new System.Drawing.Point(304, 168);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 16);
+            this.label1.Size = new System.Drawing.Size(47, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Título";
             // 
             // TituloArticulo
             // 
-            this.TituloArticulo.Location = new System.Drawing.Point(331, 131);
+            this.TituloArticulo.Location = new System.Drawing.Point(372, 164);
+            this.TituloArticulo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TituloArticulo.Name = "TituloArticulo";
-            this.TituloArticulo.Size = new System.Drawing.Size(206, 22);
+            this.TituloArticulo.Size = new System.Drawing.Size(231, 26);
             this.TituloArticulo.TabIndex = 1;
             // 
             // AreasBox
             // 
             this.AreasBox.FormattingEnabled = true;
-            this.AreasBox.Location = new System.Drawing.Point(331, 76);
+            this.AreasBox.Location = new System.Drawing.Point(372, 95);
+            this.AreasBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.AreasBox.Name = "AreasBox";
-            this.AreasBox.Size = new System.Drawing.Size(121, 24);
+            this.AreasBox.Size = new System.Drawing.Size(136, 28);
             this.AreasBox.TabIndex = 2;
             this.AreasBox.SelectedIndexChanged += new System.EventHandler(this.AreasBox_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(273, 83);
+            this.label2.Location = new System.Drawing.Point(307, 104);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 16);
+            this.label2.Size = new System.Drawing.Size(43, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "Área";
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(571, 322);
+            this.btnAceptar.Location = new System.Drawing.Point(642, 402);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptar.Size = new System.Drawing.Size(84, 29);
             this.btnAceptar.TabIndex = 4;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
@@ -90,9 +93,10 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(665, 321);
+            this.btnCancelar.Location = new System.Drawing.Point(748, 401);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(79, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(89, 29);
             this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -101,58 +105,63 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(202, 194);
+            this.label3.Location = new System.Drawing.Point(227, 242);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 16);
+            this.label3.Size = new System.Drawing.Size(128, 20);
             this.label3.TabIndex = 6;
             this.label3.Text = "Nombre CoAutor";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(201, 230);
+            this.label4.Location = new System.Drawing.Point(226, 288);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(108, 16);
+            this.label4.Size = new System.Drawing.Size(128, 20);
             this.label4.TabIndex = 7;
             this.label4.Text = "Apellido CoAutor";
             // 
             // CoAutorName
             // 
-            this.CoAutorName.Location = new System.Drawing.Point(331, 194);
+            this.CoAutorName.Location = new System.Drawing.Point(372, 242);
+            this.CoAutorName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CoAutorName.Name = "CoAutorName";
-            this.CoAutorName.Size = new System.Drawing.Size(158, 22);
+            this.CoAutorName.Size = new System.Drawing.Size(177, 26);
             this.CoAutorName.TabIndex = 8;
             // 
             // CoAutorSurname
             // 
-            this.CoAutorSurname.Location = new System.Drawing.Point(331, 227);
+            this.CoAutorSurname.Location = new System.Drawing.Point(372, 284);
+            this.CoAutorSurname.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CoAutorSurname.Name = "CoAutorSurname";
-            this.CoAutorSurname.Size = new System.Drawing.Size(158, 22);
+            this.CoAutorSurname.Size = new System.Drawing.Size(177, 26);
             this.CoAutorSurname.TabIndex = 9;
+            this.CoAutorSurname.TextChanged += new System.EventHandler(this.CoAutorSurname_TextChanged);
             // 
             // labelDNI
             // 
             this.labelDNI.AutoSize = true;
-            this.labelDNI.Location = new System.Drawing.Point(228, 265);
+            this.labelDNI.Location = new System.Drawing.Point(256, 331);
             this.labelDNI.Name = "labelDNI";
-            this.labelDNI.Size = new System.Drawing.Size(81, 16);
+            this.labelDNI.Size = new System.Drawing.Size(100, 20);
             this.labelDNI.TabIndex = 10;
             this.labelDNI.Text = "DNI CoAutor";
             this.labelDNI.Visible = false;
             // 
             // CoAutorId
             // 
-            this.CoAutorId.Location = new System.Drawing.Point(331, 262);
+            this.CoAutorId.Location = new System.Drawing.Point(372, 328);
+            this.CoAutorId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CoAutorId.Name = "CoAutorId";
-            this.CoAutorId.Size = new System.Drawing.Size(158, 22);
+            this.CoAutorId.Size = new System.Drawing.Size(177, 26);
             this.CoAutorId.TabIndex = 11;
             this.CoAutorId.Visible = false;
             // 
             // AddCoAuthor
             // 
-            this.AddCoAuthor.Location = new System.Drawing.Point(261, 306);
+            this.AddCoAuthor.Location = new System.Drawing.Point(294, 382);
+            this.AddCoAuthor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.AddCoAuthor.Name = "AddCoAuthor";
-            this.AddCoAuthor.Size = new System.Drawing.Size(137, 23);
+            this.AddCoAuthor.Size = new System.Drawing.Size(154, 29);
             this.AddCoAuthor.TabIndex = 12;
             this.AddCoAuthor.Text = "Añadir CoAutor";
             this.AddCoAuthor.UseVisualStyleBackColor = true;
@@ -161,17 +170,17 @@
             // MensajeError
             // 
             this.MensajeError.AutoSize = true;
-            this.MensajeError.Location = new System.Drawing.Point(310, 352);
+            this.MensajeError.Location = new System.Drawing.Point(349, 440);
             this.MensajeError.Name = "MensajeError";
-            this.MensajeError.Size = new System.Drawing.Size(0, 16);
+            this.MensajeError.Size = new System.Drawing.Size(0, 20);
             this.MensajeError.TabIndex = 13;
             this.MensajeError.Visible = false;
             // 
             // EnviarArticulo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(900, 562);
             this.Controls.Add(this.MensajeError);
             this.Controls.Add(this.AddCoAuthor);
             this.Controls.Add(this.CoAutorId);
@@ -186,6 +195,7 @@
             this.Controls.Add(this.AreasBox);
             this.Controls.Add(this.TituloArticulo);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "EnviarArticulo";
             this.Text = "Enviar Artículo";
             this.Load += new System.EventHandler(this.EnviarArticulo_Load);
