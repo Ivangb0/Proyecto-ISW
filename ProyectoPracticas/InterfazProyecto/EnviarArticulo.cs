@@ -44,27 +44,37 @@ namespace InterfazProyecto
             string id = CoAutorId.Text;
 
             Person p = service.FindPersonByName(name, surname);
-            if (p == null && id == null)
+            if (p == null && id == "")
             {
                 this.labelDNI.Visible = true;
                 this.CoAutorId.Visible = true;
                 this.MensajeError.Visible = true;
                 this.MensajeError.Text = "Este autor no está registrado, proporciona su DNI para registrarlo";
             } 
-            else if (p == null && id != null)
+            else if (p == null && id != "")
             {
                 // crear nueva person y guardarlo en base de datos, y ademas añadirlo a la lista 
                 p = new Person(id, name, surname);
-                service.AddPerson(p);
-                if (!coAutors.Contains(p) && coAutors.Count < 4)
+                try
                 {
-                    coAutors.Add(p);
-                } 
-                else
+                    service.AddPerson(p);
+                    if (!coAutors.Contains(p) && coAutors.Count < 4)
+                    {
+                        coAutors.Add(p);
+                        ResetFields();
+                    }
+                    else
+                    {
+                        this.MensajeError.Visible = true;
+                        this.MensajeError.Text = "El autor ya pertenece a la lista de CoAutores o ya no puede haber más CoAutores";
+                    }
+                }
+                catch (ServiceException s)
                 {
                     this.MensajeError.Visible = true;
-                    this.MensajeError.Text = "El autor ya pertenece a la lista de CoAutores o ya no puede haber más CoAutores";
+                    this.MensajeError.Text = s.Message;
                 }
+                
             }
             else
             {
@@ -73,6 +83,7 @@ namespace InterfazProyecto
                 if (!coAutors.Contains(p) && coAutors.Count < 4)
                 {
                     coAutors.Add(p);
+                    ResetFields();
                 }
                 else
                 {
@@ -80,8 +91,6 @@ namespace InterfazProyecto
                     this.MensajeError.Text = "El autor ya pertenece a la lista de CoAutores o ya no puede haber más CoAutores";
                 }
             }
-
-            ResetFields();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

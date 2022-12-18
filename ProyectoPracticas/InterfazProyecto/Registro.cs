@@ -62,18 +62,18 @@ namespace InterfazProyecto
                 {
                     service.AddUser(u);
                     service.Login(login, password);
+
+                    //navegar a siguiente pantalla, opciones habilitadas segun sea editor jefe, editor área o autor
+                    this.Hide();
+
+                    Opciones o1 = new Opciones(service);
+                    o1.Show();
                 }
                 catch (ServiceException s)
                 {
                     this.MensajeError.Visible = true;
                     this.MensajeError.Text = s.Message;
                 }
-
-                //navegar a siguiente pantalla, opciones habilitadas segun sea editor jefe, editor área o autor
-                this.Hide();
-
-                Opciones o1 = new Opciones(service);
-                o1.Show();
             }
         }
 

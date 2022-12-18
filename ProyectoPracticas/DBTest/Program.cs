@@ -102,7 +102,26 @@ namespace DBTest
 
             a.EvaluationPending.Add(articulo);
             //a.Papers.Add(articulo);
-            //a.PublicationPending.Add(articulo);
+            a.PublicationPending.Add(articulo);
+
+            Paper articulo1 = new Paper("Articulo2", new DateTime(2022, 10, 27), a, uResponsable);
+            dal.Insert<Paper>(articulo1);
+            dal.Commit();
+
+            Paper articulo2 = new Paper("Articulo3", new DateTime(2022, 10, 27), a, uResponsable);
+            dal.Insert<Paper>(articulo2);
+            dal.Commit();
+
+            Issue i1 = new Issue(1, m);
+            dal.Insert<Issue>(i1);
+            dal.Commit();
+
+            Issue i2 = new Issue(2, m);
+            dal.Insert<Issue>(i2);
+            dal.Commit();
+
+            i2.AddPaper(articulo1);
+            i2.AddPaper(articulo2);
 
             Console.WriteLine("Nombre de la revista: " + m.Name);
             Console.WriteLine("  Editor de la revista: " + m.ChiefEditor.Name + " " + m.ChiefEditor.Surname);

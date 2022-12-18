@@ -41,5 +41,18 @@ namespace Magazine.Entities
         {
             this.PublicationPending.Remove(p);
         }
+
+        public bool HasPapersWithNumber(int i)
+        {
+            foreach (Paper p in this.Papers)
+            {
+                if(p.Issue.Id == i) 
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
     }
 }

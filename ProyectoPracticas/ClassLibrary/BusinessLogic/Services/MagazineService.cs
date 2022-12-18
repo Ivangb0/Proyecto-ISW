@@ -92,12 +92,12 @@ namespace Magazine.Services
         public void AddUser(User u)
         {
             // Restricción: No puede haber dos areas con el mismo nombre
-            if (!dal.GetWhere<User>(x => x.Login == u.Login && x.Email == u.Email).Any())
+            if (!dal.GetWhere<User>(x => x.Login == u.Login || x.Email == u.Email).Any())
             {
                 dal.Insert<User>(u);
                 dal.Commit();
             }
-            else if (!dal.GetWhere<User>(x => x.Login == u.Login).Any())
+            else if (dal.GetWhere<User>(x => x.Login == u.Login).Any())
                 throw new ServiceException("User with login " + u.Login + " already exists.");
             else throw new ServiceException("User with email " + u.Email + " already exists.");
         }
@@ -159,8 +159,8 @@ namespace Magazine.Services
 
         public Person FindPersonByName(string name, string surname)
         {
-            Person person = dal.GetWhere<Person>(x => x.Name == name && x.Surname == surname).First<Person>();
-            if (person != null) { return person; }
+            IEnumerable<Person> person = dal.GetWhere<Person>(x => x.Name == name && x.Surname == surname);
+            if (person.Count() != 0) { return person.First<Person>(); }
             else return null;
         }
 

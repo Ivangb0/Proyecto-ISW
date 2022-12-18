@@ -180,9 +180,8 @@
             this.MensajeError.AutoSize = true;
             this.MensajeError.Location = new System.Drawing.Point(350, 396);
             this.MensajeError.Name = "MensajeError";
-            this.MensajeError.Size = new System.Drawing.Size(44, 16);
+            this.MensajeError.Size = new System.Drawing.Size(0, 16);
             this.MensajeError.TabIndex = 15;
-            this.MensajeError.Text = "label6";
             // 
             // ConfeccionarEjemplar
             // 

@@ -15,8 +15,6 @@ namespace InterfazProyecto
     public partial class ListadoDeArticulos : Form
     {
         private IMagazineService service;
-        private ICollection<Area> areas = new List<Area>();
-        private ICollection<Paper> papers = new List<Paper>();
 
         public ListadoDeArticulos(IMagazineService service)
         {
@@ -33,21 +31,7 @@ namespace InterfazProyecto
                 }
             }
         }
-
-        private void HacerArbol()
-        {
-            ICollection<Area> areas = service.GetAllAreas();
-            foreach (Area a in areas)
-            {
-                ListadoArticulos.Nodes.Add(a.Name);
-                ICollection<Paper> papers = a.GetPapers();
-                foreach (Paper p in papers)
-                {
-                    ListadoArticulos.TopNode.Nodes.Add(p.ToString());
-                }
-            }
-        }
-
+        
         private void ListadoDeArticulos_Load(object sender, EventArgs e)
         {
 
@@ -61,32 +45,33 @@ namespace InterfazProyecto
             o1.Show();
         }
 
-        private void NEjemplar_TextChanged(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            if (NEjemplar.Text.Length == 0)
+            string nEjemplar = NEjemplar.Text;
+            
+            if(nEjemplar != "") 
             {
-                HacerArbol();
-            } 
-            else
-            {
+                ListadoArticulos.Nodes.Clear();
+
                 ICollection<Area> areas = service.GetAllAreas();
                 foreach (Area a in areas)
                 {
-                    ListadoArticulos.Nodes.Add(a.Name);
-                    ICollection<Paper> papers = a.GetPapers();
-                    foreach (Paper p in papers)
+                    // para saber que areas poner y cuales no, hacer una funcion que compruebe si alguno de sus papers 
+                    // pertenece a ese ejemplar, y en caso de ser verdadero añadir el área y los papers.
+                    if (a.HasPapersWithNumber(Convert.ToInt32(nEjemplar)))
                     {
-                        if (p.Issue.Id.ToString() == NEjemplar.ToString())
+                        ListadoArticulos.Nodes.Add(a.Name);
+                        ICollection<Paper> papers = a.GetPapers();
+                        foreach (Paper p in papers)
                         {
-                            ListadoArticulos.TopNode.Nodes.Add(p.ToString());
-                        }
-                        else
-                        {
-                            MensajeError.Text = "El número de artículo no existe";
+                            if (p.Issue.Id.ToString() == nEjemplar)
+                            {
+                                ListadoArticulos.TopNode.Nodes.Add(p.ToString());
+                            }
                         }
                     }
                 }
-            }           
+            }            
         }
     }
 }

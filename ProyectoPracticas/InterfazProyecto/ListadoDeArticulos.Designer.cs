@@ -33,6 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.NEjemplar = new System.Windows.Forms.TextBox();
             this.MensajeError = new System.Windows.Forms.Label();
+            this.FiltroNEjemplar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ListadoArticulos
@@ -67,7 +68,7 @@
             this.NEjemplar.Name = "NEjemplar";
             this.NEjemplar.Size = new System.Drawing.Size(100, 22);
             this.NEjemplar.TabIndex = 3;
-            this.NEjemplar.TextChanged += new System.EventHandler(this.NEjemplar_TextChanged);
+            //this.NEjemplar.TextChanged += new System.EventHandler(this.NEjemplar_TextChanged);
             // 
             // MensajeError
             // 
@@ -77,11 +78,22 @@
             this.MensajeError.Size = new System.Drawing.Size(0, 16);
             this.MensajeError.TabIndex = 4;
             // 
+            // FiltroNEjemplar
+            // 
+            this.FiltroNEjemplar.Location = new System.Drawing.Point(441, 31);
+            this.FiltroNEjemplar.Name = "FiltroNEjemplar";
+            this.FiltroNEjemplar.Size = new System.Drawing.Size(75, 23);
+            this.FiltroNEjemplar.TabIndex = 5;
+            this.FiltroNEjemplar.Text = "Filtrar";
+            this.FiltroNEjemplar.UseVisualStyleBackColor = true;
+            this.FiltroNEjemplar.Click += new System.EventHandler(this.button1_Click);
+            // 
             // ListadoDeArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.FiltroNEjemplar);
             this.Controls.Add(this.MensajeError);
             this.Controls.Add(this.NEjemplar);
             this.Controls.Add(this.label1);
@@ -102,5 +114,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox NEjemplar;
         private System.Windows.Forms.Label MensajeError;
+        private System.Windows.Forms.Button FiltroNEjemplar;
     }
 }
