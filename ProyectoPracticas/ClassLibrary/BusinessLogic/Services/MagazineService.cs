@@ -92,14 +92,16 @@ namespace Magazine.Services
         public void AddUser(User u)
         {
             // Restricción: No puede haber dos areas con el mismo nombre
-            if (!dal.GetWhere<User>(x => x.Login == u.Login || x.Email == u.Email).Any())
+            if (!dal.GetWhere<User>(x => x.Login == u.Login || x.Email == u.Email || x.Id == u.Id).Any())
             {
                 dal.Insert<User>(u);
                 dal.Commit();
             }
             else if (dal.GetWhere<User>(x => x.Login == u.Login).Any())
                 throw new ServiceException("User with login " + u.Login + " already exists.");
-            else throw new ServiceException("User with email " + u.Email + " already exists.");
+            else if (dal.GetWhere<User>(x => x.Login == u.Login).Any())
+                throw new ServiceException("User with email " + u.Email + " already exists.");
+            else throw new ServiceException("User with DNI " + u.Id + " already exists");
         }
 
         public void AddPaper(Paper p)
