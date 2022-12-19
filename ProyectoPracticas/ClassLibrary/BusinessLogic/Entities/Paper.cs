@@ -36,8 +36,8 @@ namespace Magazine.Entities
         public override string ToString()
         {
             string res = "";
-            res += "Titulo: " + this.Title + ".\n";
-            res += "Autor: " + this.Responsible + ".\n";
+            res += "Titulo: " + this.Title + " " + Environment.NewLine;
+            res += "Autor: " + this.Responsible.Name + " " + this.Responsible.Surname + " " + Environment.NewLine;
             res += "CoAutores: ";
             for (int i = 0; i < CoAuthors.Count - 1; i++)
             {
@@ -46,10 +46,18 @@ namespace Magazine.Entities
 
             if (CoAuthors.Count > 0)
             {
-                res += CoAuthors.ElementAt(CoAuthors.Count - 1).Name + CoAuthors.ElementAt(CoAuthors.Count - 1).Surname + ". \n";
+                res += CoAuthors.ElementAt(CoAuthors.Count - 1).Name + CoAuthors.ElementAt(CoAuthors.Count - 1).Surname + " " + Environment.NewLine;
             }
 
-            res += "Estado: " + this.Evaluation.ToString() + ".\n" ;
+            if(this.Evaluation != null)
+            {
+                res += "Estado: " + this.Evaluation.ToString() + Environment.NewLine;
+            } 
+            else
+            {
+                res += "Estado: Pendiente de evaluación." + Environment.NewLine;
+            }
+            
 
             return res;
         }

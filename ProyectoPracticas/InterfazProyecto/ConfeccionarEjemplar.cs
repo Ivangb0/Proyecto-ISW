@@ -110,8 +110,6 @@ namespace InterfazProyecto
                 Opciones o1 = new Opciones(service);
                 o1.Show();
             }
-            
-            
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)

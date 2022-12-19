@@ -23,11 +23,11 @@ namespace InterfazProyecto
             ICollection<Area> areas = service.GetAllAreas();
             foreach  (Area a in areas)
             {
-                ListadoArticulos.Nodes.Add(a.Name);
+                TreeNode node = ListadoArticulos.Nodes.Add(a.Name);
                 ICollection<Paper> papers = a.GetPapers();
                 foreach (Paper p in papers)
                 {
-                    ListadoArticulos.TopNode.Nodes.Add(p.ToString());
+                    node.Nodes.Add(p.ToString());
                 }
             }
         }
