@@ -71,7 +71,7 @@ namespace InterfazProyecto
             {
 
                 //Pulsemos en la columna que pulsemos que coja el titulo del paper seleccionado
-                tituloSelec = noEvaluados.SelectedItems[0].ToString();
+                tituloSelec = noEvaluados.SelectedItems[0].Text;
                 AñadeComentario modif = new AñadeComentario(service);
                 modif.PonerTituloArtSelec(tituloSelec);
                 modif.ShowDialog();

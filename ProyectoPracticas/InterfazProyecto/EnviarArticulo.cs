@@ -139,6 +139,8 @@ namespace InterfazProyecto
 
                     service.AddPaper(p);
 
+                    a.AddPaperEv(p);
+
                     ResetFields();
 
                     this.Hide();

@@ -36,6 +36,7 @@ namespace InterfazProyecto
             paperParaEv = service.FindPaperByTitle(aparezcaTitutloArt.Text);
             //Falta obtener el area que habia sido seleccionada en evaluar articulo y asi usar el metodo setEvPaper de la linea de abajo
             service.setEvPaper(paperParaEv.BelongingArea, paperParaEv, comentario,true);
+            this.Hide();
         }
 
         private void PaperRejected(object sender, EventArgs e)
@@ -45,7 +46,8 @@ namespace InterfazProyecto
             //Obtenemos el area que habia sido seleccionada en evaluar articulo
             //Obtenemos el articulo con el titulo que hemos seleccionado en evaluar articulo
             paperParaEv = service.FindPaperByTitle(aparezcaTitutloArt.Text);
-            service.setEvPaper(paperParaEv.BelongingArea, paperParaEv, comentario, true);
+            service.setEvPaper(paperParaEv.BelongingArea, paperParaEv, comentario, false);
+            this.Hide();
         }
     }
 }

@@ -33,6 +33,11 @@ namespace Magazine.Entities
             return papeles;
         }
 
+        public void AddPaperEv(Paper p)
+        {
+            this.EvaluationPending.Add(p);
+        }
+
         public void AddPaperPubl(Paper p) 
         {
             this.PublicationPending.Add(p);

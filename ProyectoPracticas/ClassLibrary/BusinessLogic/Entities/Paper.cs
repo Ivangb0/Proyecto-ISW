@@ -49,15 +49,22 @@ namespace Magazine.Entities
                 res += CoAuthors.ElementAt(CoAuthors.Count - 1).Name + CoAuthors.ElementAt(CoAuthors.Count - 1).Surname + " " + Environment.NewLine;
             }
 
-            if(this.Evaluation != null)
+            if(this.BelongingArea.PublicationPending.Contains(this))
             {
-                res += "Estado: " + this.Evaluation.ToString() + Environment.NewLine;
+                res += "Estado: Pendiente de publicación" + Environment.NewLine;
             } 
-            else
+            else if (this.Evaluation == null)
             {
                 res += "Estado: Pendiente de evaluación." + Environment.NewLine;
             }
-            
+            else if (this.Evaluation.Accepted)
+            {
+                res += "Estado: Publicado" + Environment.NewLine;
+            }
+            else if (!this.Evaluation.Accepted)
+            {
+                res += "Estado: Rechazado" + Environment.NewLine;
+            }
 
             return res;
         }
