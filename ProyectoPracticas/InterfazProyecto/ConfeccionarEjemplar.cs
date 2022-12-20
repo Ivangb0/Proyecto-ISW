@@ -80,21 +80,36 @@ namespace InterfazProyecto
         private void button1_Click(object sender, EventArgs e)
         {
             Paper p = (Paper) ArticulosPendientes.SelectedItem;
-            i1.AddPaper(p);
-            a.RemovePaperPubl(p);
-            papersArea.Add(p);
-            ArticulosPublicados.DataSource = papersArea;
-            ArticulosPendientes.DataSource = a.PublicationPending;
+            if (p != null)
+            {
+                MensajeError.Text = "";
+                i1.AddPaper(p);
+                a.RemovePaperPubl(p);
+                papersArea.Add(p);
+                ArticulosPublicados.DataSource = papersArea;
+                ArticulosPendientes.DataSource = a.PublicationPending;
+            } else
+            {
+                MensajeError.Text = "Selecciona un articulo";
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+
             Paper p = (Paper) ArticulosPublicados.SelectedItem;
-            i1.RemovePaper(p);
-            a.AddPaperPubl(p);
-            papersArea.Remove(p);
-            ArticulosPublicados.DataSource = papersArea;
-            ArticulosPendientes.DataSource = a.PublicationPending;
+            if (p != null)
+            {
+                MensajeError.Text = "";
+                i1.RemovePaper(p);
+                a.AddPaperPubl(p);
+                papersArea.Remove(p);
+                ArticulosPublicados.DataSource = papersArea;
+                ArticulosPendientes.DataSource = a.PublicationPending;
+            } else
+            {
+                MensajeError.Text = "Selecciona un articulo";
+            }
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
