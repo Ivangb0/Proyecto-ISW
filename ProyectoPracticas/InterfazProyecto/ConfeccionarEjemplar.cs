@@ -117,6 +117,9 @@ namespace InterfazProyecto
             if (dateTimePicker1.Value < DateTime.Now)
             {
                 MensajeError.Text = "Fecha no válida";
+            } else
+            {
+                MensajeError.Text = "";
             }
         }
     }
