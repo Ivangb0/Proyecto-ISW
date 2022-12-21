@@ -182,7 +182,11 @@ namespace Magazine.Services
                 dal.Insert<Issue>(i);
                 dal.Commit();
             }
-            else dal.Insert<Issue>(i);
+            else
+            {
+                dal.Insert<Issue>(i);
+                dal.Commit();
+            }
         }
 
         public ICollection<Area> GetAllAreas()
@@ -224,6 +228,8 @@ namespace Magazine.Services
             }
 
             a.EvaluationPending.Remove(p);
+
+            dal.Commit();
         }
 
         public Paper FindPaperByTitle(String titulo) 

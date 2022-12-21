@@ -42,11 +42,12 @@ namespace InterfazProyecto
    
         private void EvaluarArticulo_Load(object sender, EventArgs e)
         {
-            
+            BoxArea_SelectedIndexChanged(sender, e);
         }
 
         private void BoxArea_SelectedIndexChanged(object sender, EventArgs e)
         {
+            noEvaluados.Items.Clear();
             string[] arr = new string[3];
             ListViewItem itm;
             //Obtener el area que ha sido seleccionada
@@ -72,6 +73,7 @@ namespace InterfazProyecto
 
                 //Pulsemos en la columna que pulsemos que coja el titulo del paper seleccionado
                 tituloSelec = noEvaluados.SelectedItems[0].Text;
+                this.Hide();
                 AñadeComentario modif = new AñadeComentario(service);
                 modif.PonerTituloArtSelec(tituloSelec);
                 modif.ShowDialog();

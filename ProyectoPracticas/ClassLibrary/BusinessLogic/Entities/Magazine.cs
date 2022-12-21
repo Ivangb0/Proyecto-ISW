@@ -33,7 +33,9 @@ namespace Magazine.Entities
                 aux = null;
             }
             
-            if (aux == null || aux.PublicationDate == null || DateTime.Today > aux.PublicationDate) { return new Issue(); }
+            if (aux == null) { return new Issue(1, this); }
+            else if (aux != null && aux.PublicationDate == null) { return aux; }
+            else if (aux != null && DateTime.Today > aux.PublicationDate) { return new Issue(aux.Number + 1, this); }
             return aux;
         }
     }

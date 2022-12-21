@@ -27,6 +27,8 @@ namespace InterfazProyecto
             try
             {
                 i1 = m.LastIssueNotPublished();
+                service.AddIssue(i1);
+                service.Commit();
             } 
             catch (ServiceException s)
             {
@@ -38,9 +40,9 @@ namespace InterfazProyecto
             ICollection<Area> areas = service.GetAllAreas();
             foreach (Area a in areas)
             {
-                areasNombre.Add(a.Name);
+                //areasNombre.Add(a.Name);
+                comboBoxAreas.Items.Add(a);
             }
-            comboBoxAreas.DataSource = areasNombre;
         }
 
         private void ConfeccionarEjemplar_Load(object sender, EventArgs e)
@@ -62,11 +64,15 @@ namespace InterfazProyecto
             {
                 if(p.BelongingArea == a)
                 {
-                    papersArea.Add(p);
+                    //papersArea.Add(p);
+                    ArticulosPublicados.Items.Add(p);
                 }
             }
-            ArticulosPublicados.DataSource = papersArea;
-            ArticulosPendientes.DataSource = a.PublicationPending;
+
+            foreach(Paper p in a.PublicationPending)
+            {
+                ArticulosPendientes.Items.Add(p);
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -84,10 +90,10 @@ namespace InterfazProyecto
             {
                 MensajeError.Text = "";
                 i1.AddPaper(p);
-                a.RemovePaperPubl(p);
-                papersArea.Add(p);
-                ArticulosPublicados.DataSource = papersArea;
-                ArticulosPendientes.DataSource = a.PublicationPending;
+                p.BelongingArea.RemovePaperPubl(p);
+                //papersArea.Add(p);
+                ArticulosPublicados.Items.Add(p);
+                ArticulosPendientes.Items.Remove(p);
             } else
             {
                 MensajeError.Text = "Selecciona un articulo";
@@ -102,10 +108,10 @@ namespace InterfazProyecto
             {
                 MensajeError.Text = "";
                 i1.RemovePaper(p);
-                a.AddPaperPubl(p);
-                papersArea.Remove(p);
-                ArticulosPublicados.DataSource = papersArea;
-                ArticulosPendientes.DataSource = a.PublicationPending;
+                p.BelongingArea.AddPaperPubl(p);
+                //papersArea.Remove(p);
+                ArticulosPublicados.Items.Remove(p);
+                ArticulosPendientes.Items.Add(p);
             } else
             {
                 MensajeError.Text = "Selecciona un articulo";
@@ -114,8 +120,8 @@ namespace InterfazProyecto
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (dateTimePicker1.Value > DateTime.Now)
-            {
+            //if (dateTimePicker1.Value > DateTime.Now)
+            //{
                 i1.PublicationDate = dateTimePicker1.Value;
 
                 service.Commit();
@@ -124,7 +130,7 @@ namespace InterfazProyecto
 
                 Opciones o1 = new Opciones(service);
                 o1.Show();
-            }
+            //}
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
