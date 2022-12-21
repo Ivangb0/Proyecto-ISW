@@ -18,6 +18,8 @@ namespace InterfazProyecto
         private Issue i1;
         private Area a;
         private ICollection<Paper> papersArea = new List<Paper>();
+        private DateTime fecha;
+        bool cambio;
         public ConfeccionarEjemplar(IMagazineService service)
         {
             InitializeComponent();
@@ -34,7 +36,10 @@ namespace InterfazProyecto
             {
                 MensajeError.Text = s.Message;
             }
-            
+            if (i1.PublicationDate != null)
+            {
+                dateTimePicker1.Value = (DateTime) i1.PublicationDate;
+            }
             this.nRevista.Text = m.Id.ToString();
             ICollection<string> areasNombre = new List<string>();
             ICollection<Area> areas = service.GetAllAreas();
@@ -122,17 +127,18 @@ namespace InterfazProyecto
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            //if (dateTimePicker1.Value > DateTime.Now)
-            //{
-                i1.PublicationDate = dateTimePicker1.Value;
-
-                service.Commit();
+            
+            if(cambio)
+            {
+                i1.PublicationDate = fecha;
+            }    
+            
+            service.Commit();
                 
-                this.Hide();
+            this.Hide();
 
-                Opciones o1 = new Opciones(service);
-                o1.Show();
-            //}
+            Opciones o1 = new Opciones(service);
+            o1.Show();
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -142,6 +148,8 @@ namespace InterfazProyecto
                 MensajeError.Text = "Fecha no válida";
             } else
             {
+                fecha = dateTimePicker1.Value;
+                cambio = true;
                 MensajeError.Text = "";
             }
         }

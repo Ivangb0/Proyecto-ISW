@@ -51,7 +51,7 @@ namespace Magazine.Entities
         {
             foreach (Paper p in this.Papers)
             {
-                if(p.Issue.Id == i) 
+                if(p.Issue != null && p.Issue.Id == i)
                 {
                     return true;
                 }

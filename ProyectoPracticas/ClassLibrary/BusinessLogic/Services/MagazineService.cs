@@ -174,15 +174,10 @@ namespace Magazine.Services
 
         public void AddIssue(Issue i)
         {
-            // Si el Issue ya existe, al modificarlo hay que borrarlo y volver a insertar el nuevo
+            // Si el Issue ya existe, no hace falta insertarlo, se le harán modificaciones y con un commit se guardarán
             IEnumerable<Issue> aux = dal.GetWhere<Issue>(x => x.Id == i.Id);
-            if (aux.Count() > 0)
-            {//aux.Count > 0
-                dal.Delete<Issue>(aux.First<Issue>());
-                dal.Insert<Issue>(i);
-                dal.Commit();
-            }
-            else
+            
+            if (aux.Count() == 0)
             {
                 dal.Insert<Issue>(i);
                 dal.Commit();
