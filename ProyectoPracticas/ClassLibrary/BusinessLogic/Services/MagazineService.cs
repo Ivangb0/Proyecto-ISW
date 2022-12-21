@@ -175,10 +175,10 @@ namespace Magazine.Services
         public void AddIssue(Issue i)
         {
             // Si el Issue ya existe, al modificarlo hay que borrarlo y volver a insertar el nuevo
-            Issue aux = dal.GetWhere<Issue>(x => x.Id == i.Id).First<Issue>();
-            if (aux != null)
-            {
-                dal.Delete<Issue>(aux);
+            IEnumerable<Issue> aux = dal.GetWhere<Issue>(x => x.Id == i.Id);
+            if (aux.Count() > 0)
+            {//aux.Count > 0
+                dal.Delete<Issue>(aux.First<Issue>());
                 dal.Insert<Issue>(i);
                 dal.Commit();
             }
@@ -222,7 +222,7 @@ namespace Magazine.Services
             Paper p = dal.GetWhere<Paper>(x => x.Id == paper.Id).First<Paper>();
             p.Evaluation = new Evaluation(acepted, comentarios, DateTime.Today);
 
-            if (p.Evaluation.Accepted)
+            if (acepted)
             {
                a.PublicationPending.Add(p);
             }
