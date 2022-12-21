@@ -102,7 +102,7 @@ namespace DBTest
 
             a.EvaluationPending.Add(articulo);
             //a.Papers.Add(articulo);
-            a.PublicationPending.Add(articulo);
+            //a.PublicationPending.Add(articulo);
 
             Paper articulo1 = new Paper("Articulo2", new DateTime(2022, 10, 27), a, uResponsable);
             dal.Insert<Paper>(articulo1);
