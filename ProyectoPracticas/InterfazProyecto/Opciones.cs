@@ -33,11 +33,9 @@ namespace InterfazProyecto
                 ListadoDeArticulos.Enabled = true;
                 ListadoDeArticulos.Visible = true;
             }
-            else
-            {
-                EnviarArticulo.Enabled = true;
-                EnviarArticulo.Visible = true;
-            }
+             
+            EnviarArticulo.Enabled = true;
+            EnviarArticulo.Visible = true;
         }
 
         private void Opciones_Load(object sender, EventArgs e)

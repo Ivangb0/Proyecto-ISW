@@ -35,7 +35,7 @@ namespace InterfazProyecto
                 MensajeError.Text = s.Message;
             }
             
-            this.nRevista.Text = i1.Id.ToString();
+            this.nRevista.Text = m.Id.ToString();
             ICollection<string> areasNombre = new List<string>();
             ICollection<Area> areas = service.GetAllAreas();
             foreach (Area a in areas)
