@@ -222,7 +222,7 @@ namespace Magazine.Services
             Paper p = dal.GetWhere<Paper>(x => x.Id == paper.Id).First<Paper>();
             p.Evaluation = new Evaluation(acepted, comentarios, DateTime.Today);
 
-            if (acepted)
+            if (p.Evaluation.Accepted)
             {
                a.PublicationPending.Add(p);
             }

@@ -41,7 +41,7 @@ namespace InterfazProyecto
             foreach (Area a in areas)
             {
                 //areasNombre.Add(a.Name);
-                comboBoxAreas.Items.Add(a);
+                comboBoxAreas.Items.Add(a.Name);
             }
         }
 
