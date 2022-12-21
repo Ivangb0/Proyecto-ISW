@@ -34,6 +34,8 @@ namespace InterfazProyecto
                 areasNombre.Add(a.Name);
             }
             BoxAreas.DataSource = areasNombre;
+            //Para que se pueda pulsar en cualquier columna de la fila y no solo en el titulo (+ comodo)
+            noEvaluados.FullRowSelect = true;
             noEvaluados.Columns.Add("Titulo", 190);
             noEvaluados.Columns.Add("Autor", 190);
             noEvaluados.Columns.Add("Fecha de envío", 100);

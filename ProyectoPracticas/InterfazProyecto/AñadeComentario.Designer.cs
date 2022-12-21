@@ -39,7 +39,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(242, 74);
+            this.label1.Location = new System.Drawing.Point(241, 73);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(139, 16);
             this.label1.TabIndex = 0;
@@ -48,7 +48,7 @@
             // aparezcaTitutloArt
             // 
             this.aparezcaTitutloArt.AutoSize = true;
-            this.aparezcaTitutloArt.Location = new System.Drawing.Point(380, 73);
+            this.aparezcaTitutloArt.Location = new System.Drawing.Point(397, 73);
             this.aparezcaTitutloArt.Name = "aparezcaTitutloArt";
             this.aparezcaTitutloArt.Size = new System.Drawing.Size(0, 16);
             this.aparezcaTitutloArt.TabIndex = 1;
