@@ -57,6 +57,8 @@ namespace InterfazProyecto
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ArticulosPendientes.Items.Clear();
+            ArticulosPublicados.Items.Clear();  
             String aarea = (String)comboBoxAreas.SelectedItem;
             Area a = service.FindAreaByName(aarea);
             
