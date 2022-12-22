@@ -49,7 +49,7 @@ namespace Magazine.Entities
                 res += CoAuthors.ElementAt(CoAuthors.Count - 1).Name + CoAuthors.ElementAt(CoAuthors.Count - 1).Surname + " " + Environment.NewLine;
             }
 
-            if(this.BelongingArea.PublicationPending.Contains(this))
+            if(this.BelongingArea.PublicationPending.Contains(this)) // || this.Evaluation.Accepted && this.Issue.PublicationDate > DateTime.Now)
             {
                 res += "Estado: Pendiente de publicación" + Environment.NewLine;
             } 
@@ -57,7 +57,7 @@ namespace Magazine.Entities
             {
                 res += "Estado: Pendiente de evaluación." + Environment.NewLine;
             }
-            else if (this.Evaluation.Accepted)
+            else if (this.Evaluation.Accepted) // && this.Issue.PublicationDate < DateTime.Now)
             {
                 res += "Estado: Publicado" + Environment.NewLine;
             }
