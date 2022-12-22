@@ -21,8 +21,7 @@ namespace Magazine.Entities
             this.UploadDate = uploadDate;
             this.Responsible = responsible;
             this.BelongingArea = belongingArea;
-            // Si puede haber 0 coautores, el responsible sera el autor del articulo, pero no el coautor.
-            CoAuthors.Add(responsible);
+            this.AddCoAuthor(responsible);
         }
 
         public void AddCoAuthor(Person p)

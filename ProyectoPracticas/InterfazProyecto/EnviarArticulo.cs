@@ -58,7 +58,7 @@ namespace InterfazProyecto
                 try
                 {
                     service.AddPerson(p);
-                    if (!coAutors.Contains(p) && coAutors.Count < 4)
+                    if (!coAutors.Contains(p) && coAutors.Count < 3)
                     {
                         coAutors.Add(p);
                         ResetFields();
@@ -80,7 +80,7 @@ namespace InterfazProyecto
             {
                 // p != null, añadir a una collection de person que se pasara como lista de coautores al crear el paper
                 // coAutorns.Add((Person) p)
-                if (!coAutors.Contains(p) && coAutors.Count < 4)
+                if (!coAutors.Contains(p) && coAutors.Count < 3)
                 {
                     coAutors.Add(p);
                     ResetFields();
