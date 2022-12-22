@@ -22,7 +22,7 @@ namespace Magazine.Entities
             this.Responsible = responsible;
             this.BelongingArea = belongingArea;
             // Si puede haber 0 coautores, el responsible sera el autor del articulo, pero no el coautor.
-            // CoAuthors.Add(responsible);
+            CoAuthors.Add(responsible);
         }
 
         public void AddCoAuthor(Person p)
@@ -41,7 +41,7 @@ namespace Magazine.Entities
             res += "CoAutores: ";
             for (int i = 0; i < CoAuthors.Count - 1; i++)
             {
-                res += CoAuthors.ElementAt(i).Name + CoAuthors.ElementAt(i).Surname + ",";
+                res += CoAuthors.ElementAt(i).Name + CoAuthors.ElementAt(i).Surname + ", ";
             }
 
             if (CoAuthors.Count > 0)
