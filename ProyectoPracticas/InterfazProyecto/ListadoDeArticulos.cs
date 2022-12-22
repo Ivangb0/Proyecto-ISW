@@ -71,7 +71,21 @@ namespace InterfazProyecto
                         }
                     }
                 }
-            }            
+            } else
+            {
+                ListadoArticulos.Nodes.Clear();
+
+                ICollection<Area> areas = service.GetAllAreas();
+                foreach (Area a in areas)
+                {
+                    TreeNode node = ListadoArticulos.Nodes.Add(a.Name);
+                    ICollection<Paper> papers = a.GetPapers();
+                    foreach (Paper p in papers)
+                    {
+                        node.Nodes.Add(p.ToString());
+                    }
+                }
+            }           
         }
     }
 }
