@@ -1,20 +1,14 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# Software Engineniering Project
+This project covers all the basis in Software Engineniering development: implementation through use cases, apply the layered architecture, use of test classes, etc.
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+This desktop application was an evaluable task, made in group with other tree unknown companions.
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+ The services provided changes depending on the user who logged, since the service permits switchs with the type of user who wants to use the application.
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+ There's no English version for the app.
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+## Tech Stack
+
+**Programing Language:** C#
+
+**Development Environment:** Visual Studio
